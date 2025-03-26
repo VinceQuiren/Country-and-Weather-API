@@ -1,0 +1,116 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>City</title>-->
+<!--  &lt;!&ndash; css&ndash;&gt;-->
+<!--  <link rel="stylesheet"-->
+<!--        th:href="@{/css/weather.css}"/>-->
+
+<!--</head>-->
+<!--<body>-->
+
+
+<!--<h1>Weather Condition of  <span th:text="${city}"></span></h1>-->
+
+<!--<ul class="population-list">-->
+<!--<li>-->
+<!--      <p> Sunrise: <span th:text="${cityWeatherSystems.sunrise}"></span></p>-->
+<!--      <p> Sunset <span th:text="${cityWeatherSystems.sunset}"></span></p>-->
+<!--</li>-->
+<!--</ul>-->
+
+<!--<ul th:each="cityWeathersTemp : ${cityWeathers}" class="population-list">-->
+<!--    <li>-->
+<!--        <p> Condition: <span th:text="${cityWeathersTemp.main}"></span></p>-->
+<!--        <p> Description: <span th:text="${cityWeathersTemp.description}"></span></p>-->
+<!--        <p> Icon: <span th:text="${cityWeathersTemp.icon    }"></span></p>-->
+
+<!--    </li>-->
+<!--</ul>-->
+
+
+
+<!--<ul th:each="cityWeathersMainTemp : ${cityWeatherMain}" class="population-list">-->
+<!--    <li>-->
+<!--        <p> Temperature: <span th:text="${cityWeathersMainTemp.temp}"></span>C</p>-->
+<!--        <p> Minimum Temperature: <span th:text="${cityWeathersMainTemp.temp_min}"></span>C</p>-->
+<!--        <p> Maximum Temperature: <span th:text="${cityWeathersMainTemp.temp_max}"></span>C</p>-->
+<!--        <p> Pressure: <span th:text="${cityWeathersMainTemp.pressure}"></span>hPa</p>-->
+<!--        <p> Humidity: <span th:text="${cityWeathersMainTemp.humidity}"></span>%</p>-->
+<!--        <p> Sea Level Pressure: <span th:text="${cityWeathersMainTemp.sea_level}"></span>hPa</p>-->
+
+
+<!--    </li>-->
+<!--</ul>-->
+
+<!--<ul th:each="cityWeathersWindTemp : ${cityWeathersWind}" class="population-list">-->
+<!--    <li>-->
+<!--        <p> Wind Speed: <span th:text="${cityWeathersWindTemp.speed}"></span>m/s</p>-->
+<!--        <p> Wind Deg: <span th:text="${cityWeathersWindTemp.deg}"></span>degrees</p>-->
+<!--        <p> Wind Gust: <span th:text="${cityWeathersWindTemp.gust}"></span>m/s</p>-->
+
+<!--    </li>-->
+<!--</ul>-->
+
+
+
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" th:href="@{/css/weather.css}">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Weather in <span th:text="${city}"></span></h1>
+    </header>
+
+    <div class="weather-info">
+        <!-- Main Weather -->
+        <div class="weather-card">
+            <h2>Current Weather</h2>
+            <div class="icon">
+                <img th:src="@{'https://openweathermap.org/img/wn/' + ${cityWeathers[0].icon} + '@2x.png'}" alt="Weather Icon">
+            </div>
+            <p class="condition"><span th:text="${cityWeathers[0].main}"></span></p>
+            <p class="description"><span th:text="${cityWeathers[0].description}"></span></p>
+        </div>
+
+        <!-- Temperature -->
+        <div class="weather-card">
+            <h2>Temperature</h2>
+            <p>🌡️ Current: <span th:text="${cityWeatherMain.temp}"></span>°C</p>
+            <p>⬇️ Min: <span th:text="${cityWeatherMain.temp_min}"></span>°C</p>
+            <p>⬆️ Max: <span th:text="${cityWeatherMain.temp_max}"></span>°C</p>
+            <p>💧 Humidity: <span th:text="${cityWeatherMain.humidity}"></span>%</p>
+        </div>
+
+        <!-- Wind -->
+        <div class="weather-card">
+            <h2>Wind</h2>
+            <p>🌬️ Speed: <span th:text="${cityWeathersWind.speed}"></span> m/s</p>
+            <p>🧭 Direction: <span th:text="${cityWeathersWind.deg}"></span>°</p>
+            <p>💨 Gust: <span th:text="${cityWeathersWind.gust}"></span> m/s</p>
+        </div>
+
+        <!-- Sunrise & Sunset -->
+        <div class="weather-card">
+            <h2>Sunrise & Sunset</h2>
+            <p>🌅 Sunrise: <span th:text="${cityWeatherSystems.sunrise}"></span></p>
+            <p>🌇 Sunset: <span th:text="${cityWeatherSystems.sunset}"></span></p>
+        </div>
+    </div>
+
+    <a href="javascript:history.back()" class="back-button">Go Back</a>
+</div>
+
+</body>
+</html>
+

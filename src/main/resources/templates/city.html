@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather & Cities</title>
+  <link rel="stylesheet" th:href="@{/css/city.css}"/>
+</head>
+<body>
+<div class="header">
+  <h1>Country: <span th:text="${country}"></span></h1>
+</div>
+
+<div class="container">
+  <!-- Capital Information -->
+  <div class="info-card">
+    <h2>Capital: <span th:text="${capital[0].capital}"></span></h2>
+  </div>
+
+  <!-- Currency Information -->
+  <div class="currency-card">
+    <p>Currency: <span th:text="${currency[0].currency}"></span></p>
+<!--    <p>Exchange Rate (URE to <span th:text="${currency[0].currency}"></span>): <span th:text="${currencyRate[0].rate}"></span></p>-->
+  </div>
+
+  <!-- Country Flag -->
+  <div class="flag-container">
+    <img class="flag" th:src="${flag[0].flag}" alt="Country Flag">
+  </div>
+
+  <!-- List of Cities -->
+  <h3>Major Cities</h3>
+  <div class="city-grid">
+    <ul class="city-list" th:each="tempCity : ${city}">
+      <li th:each="cityItem : ${tempCity.cities}">
+        <a class="city-card" th:text="${cityItem.city}" th:href="@{/showFormForCityWeather(city=${cityItem.city})}"></a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Population Count -->
+  <h3>Population Over Time</h3>
+  <div class="population-grid">
+    <ul th:each="population : ${population}">
+      <li th:each="count : ${population.populationCounts}" class="population-item">
+        <span class="year" th:text="${count.year}"></span>:
+        <span class="count" th:text="${count.value}"></span>
+      </li>
+    </ul>
+  </div>
+
+  <a href="javascript:history.back()" class="back-button">Go Back</a>
+</div>
+</body>
+</html>

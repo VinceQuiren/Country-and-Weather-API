@@ -1,0 +1,204 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #4CAF50, #2E8B57);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 10px 10px;
+}
+
+/* Main Container */
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Info Cards */
+.info-card {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.info-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.info-card h2 {
+    color: #333;
+}
+
+/* City List */
+.city-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.city-list li {
+    margin: 10px;
+    padding: 15px;
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.city-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.city-list li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.city-list li a:hover {
+    color: #ffeb3b;
+}
+
+/* Flag Section */
+.flag-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.flag {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.flag:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #ff5252, #ff7eb3);
+    transform: scale(1.05);
+}
+
+/* Population Count Section */
+.populationCount {
+    padding: 20px;
+    background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.populationCount:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.population-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding: 0;
+}
+
+.population-item {
+    background: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    list-style-type: none;
+    text-align: center;
+    min-width: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.population-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .city-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .population-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flag {
+        max-width: 300px;
+    }
+}
+/* Back Button */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #0084d1;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgba(0, 132, 209, 0.3);
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: #006ca6;
+    box-shadow: 0 5px 15px rgba(0, 108, 166, 0.4);
+}

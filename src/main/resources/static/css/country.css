@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E6F0E6; /* Soft sky green */
+}
+
+.header {
+    background-color: #2C5F2D; /* Deep forest green */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.country-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.country-list li {
+    background-color: #8FBC8F; /* Muted moss green */
+    border-radius: 4px;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    list-style-type: none;
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 19%; /* Makes it a circle */
+}
+
+.country-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.countries-list a {
+    color: #D2A679; /* Warm sunlit brown */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.countries-list a:hover {
+    color: #B8860B; /* Golden earth tone */
+}
+
+.country-btt {
+    display: inline-block;
+    background-color: #F5E8C7; /* Light sand */
+    color: #2C5F2D; /* Deep forest green */
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.country-btt:hover {
+    background-color: #3D6B47; /* Rich pine green */
+    color: white;
+}
+
+.containers {
+    background-color: #F0EBE3; /* Light earthy beige */
+}
