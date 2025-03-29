@@ -15,7 +15,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class CountryService {
-
+@Value("${currency_rate.api.key}")
+    private String apiKey;
     private final RestTemplate restTemplate;
 
     public CountryService(RestTemplateBuilder restTemplateBuilder) {
@@ -81,7 +82,7 @@ public class CountryService {
 
         public List<CurrencyRate> getCurrencyRate(String currencies){
 
-        String url = "http://api.exchangeratesapi.io/v1/latest?access_key=92d6d017c1ece8c8e4f7fd53ecbfda2b";
+        String url = "http://api.exchangeratesapi.io/v1/latest?access_key="+apiKey;
 
 
 
