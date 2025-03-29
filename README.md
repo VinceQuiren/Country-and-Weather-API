@@ -1,7 +1,9 @@
 **Title and Description:**  
-  The title clearly states what the API is about, and the description gives an overview of the features.
+  Country and Weather API, A Spring Boot REST API that provides country and city information, integrating and handling external API
+
 **Features:**  
-  Key functionalities (country details, city list, weather data) are outlined.
+  Key functionalities (country details, city list, weather data, currency rate from URE to selected Country)
+
  **Technologies Used:**
  Sprint boot, Maven, lombok, thymeleaf, spring boot dev-tools, MVC architecture
 
